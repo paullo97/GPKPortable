@@ -4,17 +4,14 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
-.background{background-image: linear-gradient(black,#63d3ff);}
+.background{background-image: linear-gradient(white, #abe0f5);}
+.logo{width: 80%; height: 80%; margin-left: 10%; margin-top: 5%; padding-bottom: 0%;}
 .Cad{text-align: center; position: absolute; top: 90%;}
-.input{display: flex; flex-flow:column; margin-top: 30%; width: 75%; margin-left: 12.5%}
+.input{display: flex; flex-flow:column; margin-bottom: 45%; width: 75%; margin-left: 12.5%; height: 80%; margin-top: 20%;}
 .btn-sign{display: flex;}
 .btn-sign ion-label{color: white; margin-left: 12.5%; margin-top: 3%;}
-.btn-sign ion-button{margin-bottom: 90%; margin-left: 12.5%; }
+.btn-sign ion-button{margin-bottom: 40%; margin-left: 12.5%;}
 .btn{display: flex; margin-top: auto;}
-
-
-
-
 
 
 .row{flex-direction: row;}
