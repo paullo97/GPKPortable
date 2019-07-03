@@ -5,9 +5,15 @@
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
 .background{background-image: linear-gradient(white, #abe0f5);}
-.logo{width: 80%; height: 80%; margin-left: 10%; margin-top: 5%; padding-bottom: 0%;}
+.logo{width: 60%; height: 60%; margin-left: 20%; margin-top: 5%; padding-bottom: 0%;}
 .Cad{text-align: center; position: absolute; top: 90%;}
-.input{display: flex; flex-flow:column; margin-bottom: 45%; width: 75%; margin-left: 12.5%; height: 80%; margin-top: 20%;}
+
+.input{margin-bottom: 15%; font-size: 3vw}
+.botoes{margin-top: 8%;}
+.social{display: flex; flex-direction: row; justify-content: space-around; margin-bottom: 5%;}
+.item{flex: 1;}
+
+
 .btn-sign{display: flex;}
 .btn-sign ion-label{color: white; margin-left: 12.5%; margin-top: 3%;}
 .btn-sign ion-button{margin-bottom: 40%; margin-left: 12.5%;}
