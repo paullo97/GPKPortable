@@ -1,0 +1,29 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These 
+// styles are for the entire app and not just one component. Additionally, this 
+// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// and used throughout the application.
+.background{background-image: linear-gradient(black,#63d3ff);}
+.Cad{text-align: center; position: absolute; top: 90%;}
+.input{display: flex; flex-flow:column; margin-top: 30%; width: 75%; margin-left: 12.5%}
+.btn-sign{display: flex;}
+.btn-sign ion-label{color: white; margin-left: 12.5%; margin-top: 3%;}
+.btn-sign ion-button{margin-bottom: 90%; margin-left: 12.5%; }
+.btn{display: flex; margin-top: auto;}
+
+
+
+
+
+
+.row{flex-direction: row;}
+.row-reverse{flex-direction: row-reverse;}
+.column{flex-direction: column;}
+.column-reverse{flex-direction: column-reverse;}
+
+/* Flex Container */
+.container {max-width: 400px; margin: 0 auto; display: flex; border: 1px solid #ccc;}
+/* Flex Item */
+/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+.item {flex: 1; margin: 5px; background: tomato; text-align: center; font-size: 1.5em;}
