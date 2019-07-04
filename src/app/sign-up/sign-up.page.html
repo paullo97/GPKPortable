@@ -1,9 +1,42 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>sign-up</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="BackHome()">
+        <ion-icon slot="icon-only" name="arrow-round-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Sign-In</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<div class="logo">
+  <ion-img src="assets/solucao-consultorio.png"></ion-img>
+</div>
 
+<ion-content padding>
+  <form>
+    <ion-item style="margin-top: 5%;">
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+    <ion-item style="margin-top: 5%;">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" style="text-transform:uppercase"></ion-input>
+    </ion-item>
+    <ion-item style="margin-top: 5%;">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item style="margin-top: 5%;">
+      <ion-label position="floating">CRO</ion-label>
+      <ion-input type="number" maxlength="8" aria-required="true"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col style="text-align: center; margin-top: 5%;">
+          <ion-button type="submit" size="large"><ion-icon slot="end" name="checkmark"></ion-icon>
+            Sign-In
+          </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
