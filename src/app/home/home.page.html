@@ -1,11 +1,21 @@
 <div class="logo">
   <ion-img src="assets/logogpk.png"></ion-img>
 </div>
+<div class="toc">
+  <div class="divider">
+    <strong class="divider-litle">login</strong>
+  </div>
+</div>
 <div class="social">
-    <ion-fab-button color="primary"><ion-icon start="icon-only" name="logo-facebook"></ion-icon></ion-fab-button>
-    <ion-fab-button color="secondary"><ion-icon start="icon-only" name="logo-twitter"></ion-icon></ion-fab-button>
-    <ion-fab-button color="danger"><ion-icon start="icon-only" name="logo-google"></ion-icon></ion-fab-button>
-    </div>
+  <ion-fab-button color="primary"><ion-icon start="icon-only" name="logo-facebook"></ion-icon></ion-fab-button>
+  <ion-fab-button color="secondary"><ion-icon start="icon-only" name="logo-twitter"></ion-icon></ion-fab-button>
+  <ion-fab-button color="danger"><ion-icon start="icon-only" name="logo-google"></ion-icon></ion-fab-button>
+</div>
+<div>
+  <div class="divider">
+    <strong class="divider-litle">or</strong>
+  </div>
+</div>
 <div class="input">
   <ion-row>
     <ion-col style="text-align: center;">
@@ -18,11 +28,11 @@
         <ion-input type="password" required="true"></ion-input>
       </ion-item>
       <div class="botoes">
-        <ion-button shape="round">
+        <ion-button shape="round" size="large" color="success">
           <ion-icon slot="start" name="checkmark"></ion-icon>
           Sing-in
         </ion-button>
-        <ion-button fill="outline" (click)="SignUp()">
+        <ion-button fill="outline" (click)="SignUp()" size="large">
           <ion-icon slot="end" name="person-add"></ion-icon>
           Create a Account
         </ion-button>

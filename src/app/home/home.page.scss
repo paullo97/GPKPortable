@@ -25,3 +25,6 @@
 /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
 .item {flex: 1; margin: 5px; background: tomato; text-align: center; font-size: 1.5em;}
 
+.divider{border-top: 1px solid #d9dadc; display: block; line-height: 1px; margin: 15px 0; position: relative; text-align: center;}
+.divider-litle{background: #fff; font-size: 12px; letter-spacing: 1px; padding: 0 20px; text-transform: uppercase;}
+.toc{margin-bottom: 3%}
