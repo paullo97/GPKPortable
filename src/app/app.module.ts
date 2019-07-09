@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 
+
+// see later https://www.youtube.com/watch?v=H20l9ofyR54 // How to create and use Firestore, the result is awesome. 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

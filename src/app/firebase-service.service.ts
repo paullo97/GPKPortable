@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseServiceService {
 
-  constructor(public db: AngularFireDatabase) {}
+  constructor(private firestore: AngularFirestore) { }
+
+  save(usuario) {
+    return this.firestore.collection('usuarios').add(usuario);
+  }
+
 }
