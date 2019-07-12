@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { FirebaseServiceService } from '../firebase-service.service'
+import { NavController, LoadingController } from '@ionic/angular';
+import { FirebaseServiceService, Firebase } from '../firebase-service.service'
 
 @Component({
   selector: 'app-sign-up',
@@ -8,20 +8,31 @@ import { FirebaseServiceService } from '../firebase-service.service'
   styleUrls: ['./sign-up.page.scss'],
 })
 
+export class SignUpPage implements OnInit{
+  
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
+  }
 
-export class SignUpPage{
+  firebase: Firebase[]; 
 
-email: string;
-name: string; 
-password: string; 
+  constructor(public navCtrl: NavController, private CadService: FirebaseServiceService, private loadingController: LoadingController) { }
 
-  constructor(public navCtrl: NavController, public dbService: FirebaseServiceService) { }
+  async saveFirebasse(){
+    const loading = await this.loadingController.create({ 
+      message: 'Saving in Database'
+    });
+    await loading.present();
+
+    if() 
+
+  }
 
   BackHome(){
     this.navCtrl.navigateRoot('home');
   }
 
-  create() {
+  /*create() {
     let usuario = {}; 
     usuario['name'] = this.name; 
     usuario['email'] = this.email;
@@ -37,6 +48,6 @@ password: string;
       console.log(error);
     });
 
-    }
+    }*/ 
 
 }
