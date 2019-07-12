@@ -4,6 +4,7 @@ import { Observable, Observer } from 'rxjs';
 import { map } from 'rxjs/operators'; 
 
 //Instrução do video 
+//rever o video e reallizar um projeto do zero para aprender a mexer no FirebaseStore
 export interface Firebase{
   name: string; 
   email: string;
