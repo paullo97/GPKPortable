@@ -20,7 +20,7 @@ export class FirebaseServiceService {
   private firebaseCollection: AngularFirestoreCollection<Firebase>;
 
   constructor(db: AngularFirestore) { 
-    this.firebaseCollection = db.collection<Firebase>('todos');
+    this.firebaseCollection = db.collection<Firebase>('gpk');
 
     this.firebase = this.firebaseCollection.snapshotChanges().pipe(
       map(actions => {
@@ -33,8 +33,24 @@ export class FirebaseServiceService {
     )
   }
 
-  addFirebase(firebase: Firebase){
-    return this.firebaseCollection.add(firebase);
+  getTodos() {
+    return this.firebase;
+  }
+ 
+  getTodo(id) {
+    return this.firebaseCollection.doc<Firebase>(id).valueChanges();
+  }
+ 
+  updateTodo(todo: Firebase, id: string) {
+    return this.firebaseCollection.doc(id).update(todo);
+  }
+ 
+  addTodo(todo: Firebase) {
+    return this.firebaseCollection.add(todo);
+  }
+ 
+  removeTodo(id) {
+    return this.firebaseCollection.doc(id).delete();
   }
 
 }

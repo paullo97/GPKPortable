@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 
 
 // see later https://www.youtube.com/watch?v=H20l9ofyR54 
+// https://devdactic.com/ionic-4-firebase-angularfire/
 // How to create and use Firestore, the result is awesome. 
 
 @NgModule({
