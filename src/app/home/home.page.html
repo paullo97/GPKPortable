@@ -21,18 +21,18 @@
     <ion-col style="text-align: center;">
       <ion-item>
         <ion-label position="floating" text-left>E-mail</ion-label>
-        <ion-input type="email" required="true"></ion-input>
+        <ion-input type="email" required="true" [(ngModel)]="todo.email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating" text-left>Password</ion-label>
-        <ion-input type="password" required="true"></ion-input>
+        <ion-input type="password" required="true" [(ngModel)]="todo.password"></ion-input>
       </ion-item>
       <div class="botoes">
-        <ion-button shape="round" size="large" color="success">
-          <ion-icon slot="start" name="checkmark"></ion-icon>
+        <ion-button shape="round" size="large" color="success" (click)="SignIn()">
+          <ion-icon slot="start" name="checkmark" ></ion-icon>
           Sing-in
         </ion-button>
-        <ion-button fill="outline" (click)="SignUp()" size="large">
+        <ion-button fill="outline" (click)="SignIn()" size="large">
           <ion-icon slot="end" name="person-add"></ion-icon>
           Create a Account
         </ion-button>

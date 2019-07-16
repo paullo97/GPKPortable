@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./sign-up.page.scss'],
 })
 
-export class SignUpPage{
+export class SignUpPage /*implements OnInit*/{
   
 
   todo: Firebase = {
@@ -45,7 +45,7 @@ export class SignUpPage{
   async saveTodo() {
  
     const loading = await this.loadingController.create({
-      message: 'Saving Todo..'
+      message: 'Cadastrando'
     });
     await loading.present();
  
@@ -67,23 +67,5 @@ export class SignUpPage{
   BackHome(){
     this.nav.navigateRoot('home');
   }
-
-  /*create() {
-    let usuario = {}; 
-    usuario['name'] = this.name; 
-    usuario['email'] = this.email;
-    usuario['password'] = this.password;
-
-    this.dbService.save(usuario).then(resp => {
-      this.name = "";
-      this.email = undefined;
-      this.password = "";
-      console.log(resp);
-    })
-    .catch(error => {
-      console.log(error);
-    });
-
-    }*/ 
-
+  
 }

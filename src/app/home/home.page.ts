@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
+import { FirebaseServiceService, Firebase } from '../firebase-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +10,33 @@ import { NavController } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController){}
+  todo: Firebase = {
+    name: '',
+    email: '', 
+    password: ''
+  };
 
-  SignIn(){
-    this.navCtrl.navigateRoot('sign-in');
+
+  todoId = null;
+  
+  constructor(public navCtrl: NavController, private route: ActivatedRoute, private nav: NavController, private todoService: FirebaseServiceService, private loadingController: LoadingController){}
+
+  async SignIn(){
+    
+    //this.navCtrl.navigateRoot('sign-in');
+    const loading = await this.loadingController.create({
+      message: 'Carregando'
+    });
+    await loading.present();
+  
+    this.todoService.getTodo(this.todo.email).subscribe(res => {
+      loading.dismiss();
+      this.todo = res;
+    })
   }
 
   SignUp(){
-    this.navCtrl.navigateRoot('sign-up'); 
+    this.navCtrl.navigateRoot('sign-up');
   }
 
 }
