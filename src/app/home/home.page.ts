@@ -39,4 +39,5 @@ export class HomePage {
     this.navCtrl.navigateRoot('sign-up');
   }
 
+  ////https://www.youtube.com/watch?v=aNW444SpFNs See this for more Feature
 }
