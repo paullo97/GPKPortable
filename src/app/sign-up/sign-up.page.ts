@@ -33,7 +33,7 @@ export class SignUpPage /*implements OnInit*/{
     public firebaseauth: AngularFireAuth,
     public toastCtrl: ToastController) { }
  
-
+//https://www.youtube.com/watch?v=tYSebyHsa5k
   //----------------------------Metodo de Cadastro com Firebase Auth ----------------------------------------------------//
   public cadastrarUsuario(): void {
     this.firebaseauth.auth.createUserWithEmailAndPassword(this.email.value , this.password.value)
