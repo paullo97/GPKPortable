@@ -36,6 +36,10 @@ export class FirebaseServiceService {
   getTodos() {
     return this.firebase;
   }
+
+  getEmail(){
+    return this.getEmail;
+  }
  
   getTodo(id) {
     return this.firebaseCollection.doc<Firebase>(id).valueChanges();
@@ -52,5 +56,4 @@ export class FirebaseServiceService {
   removeTodo(id) {
     return this.firebaseCollection.doc(id).delete();
   }
-
 }

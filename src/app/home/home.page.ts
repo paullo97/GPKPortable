@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage {
 
   todo: Firebase = {
-    name: '',
+    name: 'null',
     email: '', 
     password: ''
   };
@@ -28,11 +28,21 @@ export class HomePage {
       message: 'Carregando'
     });
     await loading.present();
-  
-    this.todoService.getTodo(this.todo.email).subscribe(res => {
-      loading.dismiss();
-      this.todo = res;
+
+    this.todoService.getTodo(this.todo).subscribe(res => {
+      if(typeof this.todoService.getEmail == this.todo.email){
+        loading.dismiss();
+        this.todo = res;
+        this.nav.navigateRoot('sing-in');
+      }
+      else{ 
+        loading.dismiss();
+        this.todo = res;
+        this.nav.navigateRoot('home');
+      }
+      
     })
+    
   }
 
   SignUp(){
