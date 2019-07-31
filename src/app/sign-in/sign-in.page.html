@@ -1,19 +1,15 @@
-<ion-header>
-  <ion-toolbar color="primary">
-  <ion-title>Sign-In</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 <ion-content>
   <div class="img-perfil">
     <!-- <img src="https://p.w3layouts.com/demos/june-2016/01-06-2016/model_profile_widget/web/images/p1.png" title="Aisha" alt="foto-perfil"> --> 
     <ion-img src="assets/Doctor.png"></ion-img>
   </div>
-  <h1>{{user.email}}</h1>
+  <h1>{{email}}</h1>
   <hr>
   <p>Lista de Pacientes</p>
   <ion-list>
     <ng-container *ngIf="!todos || todos.length == 0">
-      <div *ngFor="let n of [0,1,2]" padding>
+      <div *ngFor="let n of [0,1,2,3,4]" padding>
         <ion-skeleton-text></ion-skeleton-text>
         <p>
           <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>

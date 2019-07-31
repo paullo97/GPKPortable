@@ -52,7 +52,7 @@ export class HomePage {
 async exibirToast(mensagem: string){
     const toast = await this.toastCtrl.create({
       message: mensagem,
-      duration: 3000,
+      duration: 2000,
       position: 'bottom',
     });
     toast.present();
