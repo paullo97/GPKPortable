@@ -5,17 +5,34 @@
     <ion-img src="assets/Doctor.png"></ion-img>
   </div>
   <h1>{{email}}</h1>
+  <!-- <h1>{{todo.name}}</h1>
+  <h1>{{todo.sexo}}</h1> --> 
   <hr>
   <p>Lista de Pacientes</p>
   <ion-list>
-    <ng-container *ngIf="!todos || todos.length == 0">
-      <div *ngFor="let n of [0,1,2,3,4]" padding>
+
+
+      <ion-item-sliding *ngFor="let item of todos">
+          <ion-item lines="inset" button [routerLink]="['/details', item.id]">
+            <ion-label>
+              {{ item.name }}
+              <p>{{ item.email | date:'short' }}</p>
+            </ion-label>
+            <ion-note slot="end" color="primary">{{ item.sexo }}</ion-note>
+          </ion-item>
+        </ion-item-sliding>
+
+
+
+
+    <!-- <ng-container *ngIf="!todos || todos.length == 0">
+      <div *ngFor="let n of [0,1,2]" padding>
         <ion-skeleton-text></ion-skeleton-text>
         <p>
           <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
         </p>
       </div>
-    </ng-container>
+    </ng-container> --> 
   </ion-list>
   <ion-row>
     <ion-col style="text-align: center; margin-top: 5%;">

@@ -21,11 +21,11 @@
     <ion-col style="text-align: center;">
       <ion-item>
         <ion-label position="floating" text-left>E-mail</ion-label>
-        <ion-input type="email" required="true" [(ngModel)]="todo.email" #usuario></ion-input>
+        <ion-input type="email" required="true" #usuario></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating" text-left>Password</ion-label>
-        <ion-input type="password" required="true" [(ngModel)]="todo.password" #senha></ion-input>
+        <ion-input type="password" required="true" #senha></ion-input>
       </ion-item>
       <div class="botoes">
         <ion-button shape="round" size="large" color="success" (click)="LoginComEmail()">

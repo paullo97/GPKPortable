@@ -8,7 +8,8 @@ import { map } from 'rxjs/operators';
 export interface Firebase{
   name: string; 
   email: string;
-  password: string; 
+  password: string;
+  sexo: string;  
 }
 
 @Injectable({
@@ -20,7 +21,7 @@ export class FirebaseServiceService {
   private firebaseCollection: AngularFirestoreCollection<Firebase>;
 
   constructor(db: AngularFirestore) { 
-    this.firebaseCollection = db.collection<Firebase>('gpk');
+    this.firebaseCollection = db.collection<Firebase>('testeBD');
 
     this.firebase = this.firebaseCollection.snapshotChanges().pipe(
       map(actions => {
@@ -39,6 +40,13 @@ export class FirebaseServiceService {
 
   getEmail(){
     return this.getEmail;
+  }
+
+  getTodoID(email){
+    if(this.getTodos == email){
+      return this.firebase;
+    }
+    return null;
   }
  
   getTodo(id) {

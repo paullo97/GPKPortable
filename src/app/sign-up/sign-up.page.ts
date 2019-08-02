@@ -16,13 +16,15 @@ export class SignUpPage /*implements OnInit*/{
   todo: Firebase = {
     name: '',
     email: '', 
-    password: ''
-  };
+    password: '',
+    sexo: 'NBin'
+  } 
 
-
-  public user: any;
   @ViewChild('usuario') email;
   @ViewChild('senha') password;
+  @ViewChild('nome') name; 
+  @ViewChild('sexo') sex; 
+
 
   todoId = null;
  
@@ -37,7 +39,8 @@ export class SignUpPage /*implements OnInit*/{
   //----------------------------Metodo de Cadastro com Firebase Auth ----------------------------------------------------//
   public cadastrarUsuario(): void {
     this.firebaseauth.auth.createUserWithEmailAndPassword(this.email.value , this.password.value)
-    .then(() => {
+    .then(() => { 
+      this.saveTodo(); 
       this.exibirToast('Usuário criado com sucesso');
       this.nav.navigateRoot('home');
     })
@@ -46,18 +49,10 @@ export class SignUpPage /*implements OnInit*/{
     });
   }
 async exibirToast(mensagem: string){
-    /*let toast = this.toastCtrl.create({
-      message: mensagem, 
-      duration: 3000, 
-      position: 'bottom'
-    });
-    //toast.setMessage(mensagem);
-    //toast.present(); */
-
     const toast = await this.toastCtrl.create({
       message: mensagem,
       duration: 2000,
-      position: 'bottom',
+      position: 'top',
     });
     toast.present();
   }
@@ -66,7 +61,7 @@ async exibirToast(mensagem: string){
 
 //----------------------------Fim ----------------------------------------------------//
 
-
+// ---------------------------------------Metodo de Banco de dados -------------- // 
 
   /*ngOnInit() {
     this.todoId = this.route.snapshot.params['id'];
@@ -89,26 +84,20 @@ async exibirToast(mensagem: string){
  
   async saveTodo() {
  
-    const loading = await this.loadingController.create({
+    /* const loading = await this.loadingController.create({
       message: 'Cadastrando'
     });
-    await loading.present();
+    await loading.present(); */ 
  
     if (this.todoId) {
-      this.todoService.updateTodo(this.todo, this.todoId).then(() => {
-        loading.dismiss();
-        //this.nav.back();
-        this.nav.navigateRoot('home');
-      });
+      this.todoService.updateTodo(this.todo, this.todoId);
     } else {
-      this.todoService.addTodo(this.todo).then(() => {
-        loading.dismiss();
-        //this.nav.back();
-        this.nav.navigateRoot('home');
-      });
+      if(!this.todoService.addTodo(this.todo)){
+        console.log("Deu erro! ");
+      }
     }
   }
-
+// --------------------------------------- Fim -------------------------------//
   BackHome(){
     this.nav.navigateRoot('home');
   }

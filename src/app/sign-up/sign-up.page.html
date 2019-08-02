@@ -12,25 +12,49 @@
 <div class="logo">
   <ion-img src="assets/solucao-consultorio.png"></ion-img>
 </div>
-
+<!-- Preenchimento dos campos para cadastro -->
 <ion-content padding>
-    <ion-item style="margin-top: 5%;">
-      <ion-label position="floating">E-mail</ion-label>
-      <ion-input required type="email" [(ngModel)]="todo.email" #usuario></ion-input>
-    </ion-item>
-    <ion-item style="margin-top: 5%;">
-      <ion-label position="floating">Name</ion-label>
-      <ion-input required type="text" style="text-transform:uppercase" [(ngModel)]="todo.name"></ion-input>
-    </ion-item>
-    <ion-item style="margin-top: 5%;">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input required type="password" [(ngModel)]="todo.password" #senha></ion-input>
-    </ion-item>
-    <ion-row>
-      <ion-col style="text-align: center; margin-top: 5%;">
-          <ion-button size="large" (click)="cadastrarUsuario()"><ion-icon slot="end" name="checkmark"></ion-icon>
-            Sign-In
-          </ion-button>
-      </ion-col>
-    </ion-row>
+  <ion-item style="margin-top: 5%;">
+    <ion-label position="floating">E-mail</ion-label>
+    <ion-input required type="email" [(ngModel)]="todo.email" #usuario></ion-input>
+  </ion-item>
+  <ion-item style="margin-top: 5%;">
+    <ion-label position="floating">Name</ion-label>
+    <ion-input required type="text" style="text-transform:uppercase" [(ngModel)]="todo.name" #name></ion-input>
+  </ion-item>
+  <ion-item style="margin-top: 5%;">
+    <ion-label position="floating">Password</ion-label>
+    <ion-input required type="password" [(ngModel)]="todo.password" #senha></ion-input>
+  </ion-item>
+<!-- Escolha do sexo -->
+  <ion-list>
+    <ion-radio-group [(ngModel)]="todo.sex">
+      <ion-list-header>
+        <ion-label>Sexo</ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio slot="start" value="M" checked></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Feminino</ion-label>
+        <ion-radio slot="start" value="F"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Prefiro não dizer</ion-label>
+        <ion-radio slot="start" value="NBin"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+<!-- Botão de Cadastro -->
+  <ion-row>
+    <ion-col style="text-align: center; margin-top: 5%;">
+        <ion-button size="large" (click)="cadastrarUsuario()"><ion-icon slot="end" name="checkmark"></ion-icon>
+          Sign-In
+        </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>

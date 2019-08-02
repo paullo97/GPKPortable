@@ -15,11 +15,11 @@ export class HomePage {
   @ViewChild('usuario') email;
   @ViewChild('senha') password;
 
-  todo: Firebase = {
+  /* todo: Firebase = {
     name: 'null',
     email: '', 
     password: ''
-  };
+  }; */ 
 
 
   todoId = null;
@@ -59,8 +59,10 @@ async exibirToast(mensagem: string){
   }
 
   //------------------------------------------------------------------------------------------//
-
-
+  SignUp(){
+    this.navCtrl.navigateRoot('sign-up');
+  }
+/*
   //Metodo para salvar no banco de Dados CloudFreStore
   async SignIn(){
     
@@ -76,9 +78,5 @@ async exibirToast(mensagem: string){
     })
   }
 
-  SignUp(){
-    this.navCtrl.navigateRoot('sign-up');
-  }
-
-  ////https://www.youtube.com/watch?v=aNW444SpFNs See this for more Feature
+  ////https://www.youtube.com/watch?v=aNW444SpFNs See this for more Feature */ 
 }
